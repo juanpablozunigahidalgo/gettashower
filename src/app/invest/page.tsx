@@ -1,7 +1,6 @@
 'use client';
 
-import { TrendingUp, Zap, Building2, Send } from 'lucide-react';
-import { useState } from 'react';
+import { TrendingUp, Zap, Building2, Mail, Youtube, Instagram } from 'lucide-react';
 
 const metrics = [
   {
@@ -25,19 +24,6 @@ const metrics = [
 ];
 
 export default function Invest() {
-  const [formData, setFormData] = useState({
-    name: '',
-    fund: '',
-    email: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Mock submission
-    alert('Pitch deck request received! We\'ll be in touch soon.');
-    setFormData({ name: '', fund: '', email: '' });
-  };
-
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -108,65 +94,48 @@ export default function Invest() {
                 </li>
               </ul>
             </div>
-
-            <div className="bg-white rounded-3xl p-8 border border-gray-200">
-              <h3 className="text-2xl font-bold mb-4">The Market</h3>
-              <p className="mb-4">
-                Barcelona sees 15.6 million tourists annually. European cities collectively host over
-                700 million international arrivals. The market for on-demand urban services is massive
-                and currently unaddressed.
-              </p>
-              <p>
-                We're starting with showers, but the platform extends to lockers, co-working spaces,
-                and micro-fulfillment—anywhere idle capacity exists in the urban fabric.
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Investor Lead Gen */}
+      {/* Investor Lead Gen (REEMPLAZADO) */}
       <section className="py-24 bg-white">
-        <div className="max-w-2xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-[#0066FF] to-[#0052CC] rounded-3xl p-12 text-white">
-            <h2 className="text-4xl font-bold mb-4">Request Pitch Deck</h2>
-            <p className="text-white/90 mb-8">
-              Get detailed financials, market analysis, and our expansion roadmap.
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="bg-gradient-to-br from-[#0066FF] to-[#0052CC] rounded-[3rem] p-16 text-white shadow-xl">
+            <h2 className="text-5xl font-bold mb-6">Curious about the project?</h2>
+            <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+              Do not hesitate to ask for the <strong>investor desk</strong>. 
+              Drop us an email or follow our journey as we build the future of urban freedom.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="text"
-                placeholder="Name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                required
-                className="w-full px-6 py-4 rounded-2xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <input
-                type="text"
-                placeholder="Fund / Organization"
-                value={formData.fund}
-                onChange={(e) => setFormData({ ...formData, fund: e.target.value })}
-                required
-                className="w-full px-6 py-4 rounded-2xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-                className="w-full px-6 py-4 rounded-2xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <button
-                type="submit"
-                className="w-full bg-white text-[#0066FF] px-8 py-4 rounded-3xl font-bold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+              {/* Email Button */}
+              <a 
+                href="mailto:info@gettashower.com" 
+                className="flex items-center gap-3 bg-white text-[#0066FF] px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105 active:scale-95"
               >
-                Request Pitch Deck
-                <Send className="w-5 h-5" />
-              </button>
-            </form>
+                <Mail className="w-6 h-6" />
+                info@gettashower.com
+              </a>
+
+              {/* Social Media Links */}
+              <div className="flex items-center gap-4">
+                <a 
+                  href="https://www.youtube.com/@GettaShower" 
+                  target="_blank" 
+                  className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all border border-white/20"
+                >
+                  <Youtube className="w-7 h-7 text-white" />
+                </a>
+                <a 
+                  href="https://instagram.com/gettashower" 
+                  target="_blank" 
+                  className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all border border-white/20"
+                >
+                  <Instagram className="w-7 h-7 text-white" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
